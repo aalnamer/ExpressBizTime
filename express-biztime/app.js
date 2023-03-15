@@ -8,8 +8,10 @@ app.use(express.json());
 
 const cRoutes = require("./routes/companies");
 const iRoutes = require("./routes/invoices");
+const iIndustries = require("./routes/industries");
 app.use("/companies", cRoutes);
 app.use("/invoices", iRoutes);
+app.use("/industries", iIndustries);
 
 /** 404 handler */
 
@@ -30,7 +32,7 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(3000, function () {
-  console.log("Server started on 3000");
+  console.log("Listening on 3000");
 });
 
 // module.exports = app;
